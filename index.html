@@ -1,507 +1,709 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name=author content="Giuseppe Masi">
-  <meta name=description content="Ph.D. Student">
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <title>Giuseppe Masi | Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giuseppe Masi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        html {
+            scroll-behavior: smooth;
+        }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fafafa;
+        }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+        /* Header and Navigation */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-  <!-- =======================================================
-  * Template Name: MyResume
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-my-resume/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 4rem 0;
+            min-height: 500px;
+        }
+
+        a {
+            color: #2c3e50;
+        }
+
+        a:visited {
+            color: #2c3e50;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+            text-align: center;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #3498db;
+            margin: 0 auto;
+        }
+
+        .about-text {
+            text-align: left;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Resume Section */
+        #resume {
+            background: #f8f9fa;
+        }
+
+        .resume-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .resume-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .resume-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .education-item, .experience-item {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .education-item:last-child, .experience-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .item-subtitle {
+            color: #7f8c8d;
+            font-style: italic;
+            margin: 0.25rem 0;
+        }
+
+        .item-date {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+
+        .item-thesis {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: #3498db;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+        }
+
+        /* Publications Section */
+        #publications {
+            background: white;
+        }
+
+        .publication-item {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .publication-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.2rem;
+            color: #2c3e50;
+        }
+
+        .publication-authors {
+            color: #7f8c8d;
+            margin-bottom: 0.2rem;
+        }
+
+        .publication-journal {
+            font-style: italic;
+            color: #95a5a6;
+        }
+
+        /* Projects Section */
+        #projects {
+            background: #f8f9fa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .project-description {
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item i {
+            margin-right: 0.5rem;
+            width: 20px;
+        }
+
+        .contact-item a {
+            font-family: Arial, sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #3498db;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            font-size: 1.3rem;
+        }
+
+        .social-link:hover {
+            background: #2980b9;
+            color: white;
+        }
+
+        .social-link:visited {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #34495e;
+            color: #bdc3c7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 1rem;
+            }
+
+            main {
+                margin-top: 120px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .profile-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .resume-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            section {
+                padding: 2rem 0;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .about-text h2 {
+                font-size: 1.5rem;
+            }
+
+            .about-text p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex flex-column justify-content-center">
-
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="#hero" class="active"><i class="bi bi-house navicon"></i><span>Home</span></a></li>
-        <li><a href="#about"><i class="bi bi-person navicon"></i><span>About</span></a></li>
-        <li><a href="#publications"><i class="bi bi-quote navicon"></i><span>Publications</span></a></li>
-        <li><a href="#resume"><i class="bi bi-file-earmark-text navicon"></i><span>Resume</span></a></li>
-        <li><a href="#projects"><i class="bi bi-boxes navicon"></i><span>Projects</span></a></li>
-        <li><a href="#contact"><i class="bi bi-envelope navicon"></i><span>Contact</span></a></li>
-      </ul>
-    </nav>
-
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section light-background">
-
-      <!--<img src="assets/img/hero-bg.jpg" alt="">-->
-
-      <div class="container" data-aos="zoom-out">
-        <div class="row justify-content-center">
-          <div class="col-lg-9">
-            <h2>Giuseppe Masi</h2>
-            <p><span class="typed" data-typed-items="Researcher, Developer, Student">Student</span><span
-                class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-            <div class="social-links">
-              <a href="https://www.linkedin.com/in/giuseppemasi99"><i class="bi bi-linkedin"></i></a>
-              <a href="https://github.com/giuseppemasi99"><i class="bi bi-github"></i></a>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Giuseppe Masi</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="about">
+            <div class="container">
+                <h1 class="section-title">About Me</h1>
+                <div class="about-content">
+                    <div>
+                        <img src="assets/img/1688989872651.jpeg" alt="Profile Image" class="profile-image">
+                    </div>
+                    <div class="about-text">
+                        <h2>CS PhD Candidate @ Sapienza</h2>
+                        <h2>AI Scientist @ Outsampler</h2>
+                        <p>I am an AI Scientist at Outsampler, crafting research and innovation at the intersection of artificial intelligence and finance.</p>
+                        <p>I am also a dedicated PhD candidate in Computer Science at Sapienza, University of Rome. My research focuses on Artificial Intelligence for Finance, including generative modeling and causal discovery in time series data.</p>
+                        <p>With a strong background in both theoretical computer science and practical software development, I am passionate about bridging the gap between academic research and real-world applications. My work has been published in several peer-reviewed journals and presented at international conferences.</p>
+                    </div>
+                </div>
             </div>
-          </div>
+        </section>
+
+        <section id="resume">
+            <div class="container">
+                <h2 class="section-title">Resume</h2>
+                <div class="resume-content">
+                    <div class="resume-section">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <div class="item-title">PhD in Computer Science</div>
+                            <div class="item-subtitle">Sapienza, University of Rome</div>
+                            <div class="item-date">2022 - Present</div>
+                            <!--<p>Dissertation: "Advanced Neural Networks for Medical Text Analysis"</p>-->
+                        </div>
+                        <div class="education-item">
+                            <div class="item-title">MS in Computer Science</div>
+                            <div class="item-subtitle">Sapienza, University of Rome</div>
+                            <div class="item-date">2020 - 2022</div>
+                            <div class="item-date">Grade: 110/110 with honours</div>
+                            <p class="item-thesis">Thesis: "Adversarial Learning to Rank - Transferable Text-Based Attacks to Black-Box Neural Ranking Models: WARA and WSRA"</p>
+                        </div>
+                        <div class="education-item">
+                            <div class="item-title">BS in Computer Science</div>
+                            <div class="item-subtitle">Tor Vergata, University of Rome</div>
+                            <div class="item-date">2017 - 2020</div>
+                            <div class="item-date">Grade: 110/110 with honours</div>
+                            <p class="item-thesis">Thesis: "Diffusion in the Presence of Ambivalent relationships: The Role of the Negative relationships in the complexity of the Problem"</p>
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3>Experience</h3>
+                        <div class="experience-item">
+                            <div class="item-title">AI Scientist</div>
+                            <div class="item-subtitle">Outsampler <a href="https://outsampler.com/" target="_blank"><i class="bi bi-link-45deg"></i></a></div>
+                            <div class="item-date">2025 - Present</div>
+                            <!--<p class="item-thesis"></p>-->
+                        </div>
+                    </div>
+
+                    <div class="resume-section">
+                        <h3>Skills</h3>
+                        <div class="skills-list" style="border-bottom: 1px solid #3498db; padding-bottom: 0.5rem;">
+                            <span class="skill-tag">Software Engineer</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Git</span>
+                        </div>
+                        <div class="skills-list" style="margin-top: 0.5rem;">
+                            <span class="skill-tag">(Deep) Machine Learning</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Natural Language Processing</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">Statistical Analysis</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <div class="container">
+                <h2 class="section-title">Publications</h2>
+                <div class="publication-item">
+                    <div class="publication-title">Robust Causal Discovery in Real-World Time Series with Power-Laws</div>
+                    <div class="publication-authors">M Tusoni, G Masi, A Coletta, A Glielmo, V Arrigoni, N Bartolini</div>
+                    <div class="publication-journal">Under review. [<a href="https://arxiv.org/abs/2507.12257" target="_blank">Preprint</a>]</div>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">Patrolling Heterogeneous Targets with FANETs</div>
+                    <div class="publication-authors">N Bartolini, G Masi, M Prata, F Trombetti</div>
+                    <div class="publication-journal">IEEE INFOCOM 2024-IEEE Conference on Computer Communications Workshops (INFOCOM WKSHPS) [<a href="https://ieeexplore.ieee.org/abstract/document/10620789" target="_blank">Link</a>]</div>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">Lob-based Deep Learning Models for Stock Price Trend Prediction: A Benchmark Study</div>
+                    <div class="publication-authors">M Prata, G Masi, L Berti, V Arrigoni, A Coletta, I Cannistraci, S Vyetrenko, P Velardi, N Bartolini</div>
+                    <div class="publication-journal">Artificial Intelligence Review [<a href="https://link.springer.com/article/10.1007/s10462-024-10715-4" target="_blank">Link</a>]</div>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">On Correlated Stock Market Time Series Generation</div>
+                    <div class="publication-authors">G Masi, M Prata, M Conti, N Bartolini, S Vyetrenko</div>
+                    <div class="publication-journal">Proceedings of the Fourth ACM International Conference on AI in Finance, 524-532 [<a href="https://dl.acm.org/doi/abs/10.1145/3604237.3626895" target="_blank">Link</a>]</div>
+                </div>
+                <div class="publication-item">
+                    <div class="publication-title">Stock Shocks Modelling and Forecasting</div>
+                    <div class="publication-authors">V Arrigoni, G Masi, E Mercanti, N Bartolini, S Vyetrenko</div>
+                    <div class="publication-journal">2023 IEEE 43rd International Conference on Distributed Computing Systems Workshops (ICDCSW) [<a href="https://ieeexplore.ieee.org/abstract/document/10302953" target="_blank">Link</a>]</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="assets/img/projects/placy.png" alt="Causal Discovery" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">PLACy <a target="_blank" href="https://github.com/giuseppemasi99/PLACy"><i class="bi bi-link-45deg"></i></a></h3>
+                            <p class="project-description">Robust causal discovery method for stochastic time series leveraging power-law spectral features. Exploits the inherent power-law distribution in real-world time series frequency spectra to amplify genuine causal signals and reduce noise sensitivity, outperforming state-of-the-art alternatives on synthetic and real-world datasets.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/img/projects/trend_prediction.png" alt="Time-series Forecasting" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">LOBCAST <a target="_blank" href="https://github.com/giuseppemasi99/LOBCAST"><i class="bi bi-link-45deg"></i></a></h3>
+                            <p class="project-description">Open-source Python framework for Stock Price Trend Prediction (SPTP) standardization, implementing data preprocessing, deep learning model training, evaluation, and profit analysis. Benchmarks fifteen state-of-the-art deep learning models on Limit Order Book data, examining robustness and generalizability.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/img/projects/price_correlations_wrt_PEP.jpg" alt="Time-series Generation" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">CoMeTS-GAN <a target="_blank" href="https://github.com/giuseppemasi99/comets-gan"><i class="bi bi-link-45deg"></i></a></h3>
+                            <p class="project-description">Correlated Multivariate Time Series generative framework based on Conditional Generative Adversarial Networks (C-GANs) designed to generate price and volume time series of correlated stocks. Accurately learns and reproduces stylised facts and inter-asset correlations, crucial for achieving realism in multi-stock simulation environments.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/img/projects/shock.png" alt="Shock detection" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Stock Shocks Modelling and Forecasting</h3>
+                            <p class="project-description">Formal definition of stock shocks based on fat-tailed Lévy-stable distributions. Implemented forecasting algorithms using Limit Order-Book data with machine learning approaches (random forest, hierarchical clustering) achieving high precision and recall.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/img/projects/patrolling.png" alt="Patrolling" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Patrolling <a target="_blank" href="https://github.com/giuseppemasi99/DRONET-for-Patrolling"><i class="bi bi-link-45deg"></i></a></h3>
+                            <p class="project-description">Patrolling is a drone-based surveillance system that uses computer vision and deep learning to monitor and secure large areas. The system can detect intruders, recognize faces, and provide real-time alerts to security personnel.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/img/projects/wsd.png" alt="NLP" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">Natural Language Processing</h3>
+                            <p class="project-description">Word-in-Context <a target="_blank" href="https://github.com/giuseppemasi99/nlp-hw1-word_in_context"><i class="bi bi-link-45deg"></i></a></p>
+                            <p class="project-description">Aspect-based Sentiment Analysis <a target="_blank" href="https://github.com/giuseppemasi99/nlp-hw2-aspect_based_sentiment_analysis"><i class="bi bi-link-45deg"></i></a></p>
+                            <p class="project-description">Word Sense Disambiguation <a target="_blank" href="https://github.com/giuseppemasi99/nlp-hw3-word_sense_disambiguation"><i class="bi bi-link-45deg"></i></a></p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="assets/img/projects/etreeum.png" alt="Blockchain" class="project-image">
+                        <div class="project-content">
+                            <h3 class="project-title">eTreeum <a target="_blank" href="https://github.com/giuseppemasi99/eTreeum"><i class="bi bi-link-45deg"></i></a></h3>
+                            <p class="project-description">eTreeum was created to help raise awareness on the environmental impact of blockchain technologies. Ideally, users of this app will help plant trees in the real world by playing with crypto-trees. Users are able to start with a free seed, take care of it and then sell it for cryptocurrencies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <span>📧 <a style="color: white;" href="mailto:giuseppe@outsampler.com">giuseppe@outsampler.com</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📧 <a style="color: white;" href="mailto:masi.g@di.uniroma1.it">masi.g@di.uniroma1.it</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <span>📍Rome, Italy</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/giuseppemasi99/" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/giuseppemasi99" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://scholar.google.com/citations?user=WMu-pA8AAAAJ" target="_blank" class="social-link"><i class="fas fa-graduation-cap"></i></a>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Research Interests</h3>
+                    <p>Machine Learning, AI4Finance, Time Series Analysis,Natural Language Processing, Causality</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Giuseppe Masi. All rights reserved.</p>
+            </div>
         </div>
-      </div>
+    </footer>
 
-    </section>
-    <!-- /Hero Section -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
 
-    <!-- About Section -->
-    <section id="about" class="about section">
+        // Add active class to navigation items based on scroll position
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
 
-        <div class="row gy-4 justify-content-center">
-          <div class="col-lg-4">
-            <img src="assets/img/profile-img.png" class="img-fluid" alt="Giuseppe Masi">
-          </div>
-          <div class="col-lg-8 content">
-            <h2>About</h2>
-            <p class="text-start">
-              I am a PhD student in Computer Science at Sapienza University of Rome, Italy. My research focuses on
-              applying artificial intelligence techniques to financial markets. My works start with a precise
-              mathematical formulation to lead the machine learning model in the problem to be optimised.
-            </p>
-            <p class="text-start">
-              Currently, I am working on generating synthetic time series with underlying causal relationships
-              (represented as causal graphs) through generative models, particularly Transformers-based Diffusion
-              Models. Moreover, I am also developing advanced time-series analysis to detect shocks in asset prices and
-              classify price trends.
-            </p>
-            <p class="text-start">
-              Apart from Machine Learning-based projects, I worked on creating a Software Defined Network to manage the
-              redirection of traffic dynamically. Moreover, I am working on a project to optimise the distributed
-              inference of large deep learning models, taking advantage of the Lyapunov theory to solve an optimisation
-              problem involving carbon footprint, response time, and accuracy over time.
-            </p>
-            <p class="text-start">
-              Finally, during the Master's Degree courses, I had the opportunity to develop NLP projects, dealing with
-              tasks such as Word Sense Disambiguation and Learning to Rank, implementing state-of-the-art models. I also
-              worked in the field of reinforcement learning in several tasks, including the allocation of communication
-              channels to a set of drones.
-            </p>
-          </div>
-        </div>
+        // Add subtle animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-      </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
 
-    </section>
-    <!-- /About Section -->
-
-    <!-- Publications Section -->
-    <section id="publications" class="skills section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Publications</h2>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <ul class="list-group">
-          <li class="list-group-item">
-            <p class="mb-0">V. Arrigoni, <span class="fw-bold">G. Masi</span>, E. Mercanti, N. Bartolini, S. Vyetrenko
-            </p>
-            <p class="mb-0 fst-italic">&ldquo;Stock Shocks Modelling and Forecasting&rdquo;</p>
-            <p class="mb-0">In 2023 IEEE 43rd International Conference on Distributed Computing Systems Workshops
-              (<span class="text-decoration-underline">ICDCSW</span>)</p>
-          </li>
-          <li class="list-group-item">
-            <p class="mb-0"><span class="fw-bold">G. Masi</span>, M. Prata, M. Conti, N. Bartolini, S. Vyetrenko</p>
-            <p class="mb-0 fst-italic">&ldquo;On Correlated Stock Market Traces Generation&rdquo;</p>
-            <p class="mb-0">In 2023 ACM 4th International Conference on AI in Finance (<span
-                class="text-decoration-underline">ICAIF</span>)</p>
-          </li>
-          <li class="list-group-item">
-            <p class="mb-0">M. Prata, <span class="fw-bold">G. Masi</span>, L. Berti, V. Arrigoni,
-              A. Coletta, I. Cannistraci, P. Velardi, S. Vyetrenko, N. Bartolini</p>
-            <p class="mb-0 fst-italic">&ldquo;LOB-Based Deep Learning Models for Stock Price Trend Prediction: A
-              Benchmark Study&rdquo;</p>
-            <p class="mb-0">Artificial Intelligence Review 2024</p>
-          </li>
-          <li class="list-group-item">
-            <p class="mb-0">N. Bartolini, <span class="fw-bold">G. Masi</span>, M. Prata, F. Trombetti</p>
-            <p class="mb-0 fst-italic">&ldquo;Patrolling Heterogeneous Targets with FANETs&rdquo;</p>
-            <p class="mb-0">In 2024 IEEE International Conference on Computer Communications Workshops (<span
-                class="text-decoration-underline">INFOCOMW</span>)</p>
-          </li>
-          <li class="list-group-item">
-            <p class="mb-0"><span class="fw-bold">G. Masi</span>, A. Coletta, E. Fons, S. Vyetrenko, N. Bartolini</p>
-            <p class="mb-0 fst-italic">&ldquo;CATS: Causally Associated Time-Series Generation through Diffusion
-              Models&rdquo;</p>
-            <p class="mb-0">Under review.</p>
-          </li>
-          <li class="list-group-item">
-            <p class="mb-0">V. Arrigoni, <span class="fw-bold">G. Masi</span>, N. Bartolini</p>
-            <p class="mb-0 fst-italic">&ldquo;STOP! A Solution for Sustainable and Geo-Distributed AI Inference&rdquo;
-            </p>
-            <p class="mb-0">Under review.</p>
-          </li>
-        </ul>
-
-      </div>
-
-    </section>
-    <!-- /Publications Section -->
-
-    <!-- Resume Section -->
-    <section id="resume" class="resume section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Resume</h2>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-
-            <h3 class="resume-title">Education</h3>
-
-            <div class="resume-item">
-              <h4>Ph.D. Fellowship in Artificial Intelligence</h4>
-              <h5>Oct. 2022 - Current</h5>
-              <p><em>Sapienza, University of Rome, IT</em></p>
-            </div>
-
-            <div class="resume-item">
-              <h4>Master's Degree in Computer Science</h4>
-              <h5>Oct. 2020 - Oct. 2022</h5>
-              <p><em>Sapienza, University of Rome, IT</em></p>
-              <p>Final grade: 110/110 cum laude - GPA: 4/4</p>
-              <p> Thesis: Adversarial Learning to Rank Transferable Text-Based Attacks to Black-Box Neural Ranking
-                Models: WARA and WSRA</p>
-            </div>
-
-            <div class="resume-item">
-              <h4>Bachelor's Degree in Computer Science</h4>
-              <h5>Oct. 2017 - Oct. 2020</h5>
-              <p><em>Tor Vergata, University of Rome, IT</em></p>
-              <p>Final grade: 110/110 cum laude - GPA: 3.94/4</p>
-              <p> Thesis: Diffusion in the presence of ambivalent relationships: the role of negative relationships in
-                the complexity of the problem</p>
-            </div>
-
-            <h3 class="resume-title">Awards</h3>
-            <div class="resume-item">
-              <h4>Research Grant by Sapienza University 2023</h4>
-              <p class="fst-italic">&ldquo;Enhancing Fairness in Financial Markets - Leveraging NLP Techniques for
-                Textual Analysis&rdquo;
-              </p>
-            </div>
-            <div class="resume-item">
-              <h4>Research Grant by Sapienza University 2024</h4>
-              <p class="fst-italic">&ldquo;SustainaML: An Architecture for Carbon-Aware Distributed Learning Policy
-                Programmability&rdquo;
-              </p>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-
-            <h3 class="resume-title">Participations in Funded Projects</h3>
-            <div class="resume-item">
-              <h4>Research collaboration as participant in the project NGIAtlantic.eu 2022</h4>
-              <p class="fst-italic">&ldquo;Vulnerability assessment and Robust Defences for Optimised Attacks in Dynamic
-                SDNs&rdquo;</p>
-            </div>
-            <div class="resume-item">
-              <h4>Research collaboration as participant in the project activities of the JPMorgan Faculty Award</h4>
-              <p class="fst-italic">&ldquo;Understanding interdependent market dynamics: vulnerabilities and
-                opportunities&rdquo;
-              </p>
-            </div>
-
-            <h3 class="resume-title">Skills</h3>
-            <div class="resume-item">
-              <p class="mb-0">OOP (Python, Java, C++); C</p>
-            </div>
-            <div class="resume-item">
-              <p class="mb-0">(Deep) Machine Learning: Classification-Regression tasks</p>
-            </div>
-            <div class="resume-item">
-              <p class="mb-0">NLP Pipeline</p>
-            </div>
-            <div class="resume-item">
-              <p class="mb-0">Optimization (Gurobi)</p>
-            </div>
-            <div class="resume-item">
-              <p class="mb-0">SQL, MongoDB</p>
-            </div>
-            <div class="resume-item">
-              <p class="mb-0">Blockchain Technologies: Ethereum (Solidity)</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="projects" class="portfolio section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Projects</h2>
-      </div>
-      <!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-          <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-gen">Generative AI</li>
-            <li data-filter=".filter-finance">AI4Finance</li>
-            <li data-filter=".filter-nlp">NLP</li>
-            <li data-filter=".filter-blockchain">Blockchain</li>
-            <li data-filter=".filter-drones">Drones</li>
-          </ul>
-          <!-- End Portfolio Filters -->
-
-          <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-            <!--
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-gen">
-              <img src="assets/img/projects/causaldiffusion.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>CausalDiffusion</h4>
-                <a href="assets/img/projects/causaldiffusion.png" title="CausalDiffusion"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/causal-diffusion" title="More Details"
-                  class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div>
-            -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-finance">
-              <img src="assets/img/projects/trend_prediction.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>LOBCAST</h4>
-                <a href="assets/img/projects/trend_prediction.png" title="LOBCAST" data-gallery="portfolio-gallery-app"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/LOBCAST" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-finance">
-              <img src="assets/img/projects/shock.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Stock Shocks</h4>
-                <a href="assets/img/projects/shock.png" title="Shocks" data-gallery="portfolio-gallery-app"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-drones">
-              <img src="assets/img/projects/patrolling.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Balanced Clusters Patrolling</h4>
-                <a href="assets/img/projects/patrolling.png" title="Balanced Clusters Patrolling (BCP)"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/DRONET-for-Patrolling" title="More Details"
-                  class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-gen">
-              <img src="assets/img/projects/price_correlations_wrt_PEP.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>CoMeTS-GAN</h4>
-                <a href="assets/img/projects/price_correlations_wrt_PEP.jpg" title="CoMeTS-GAN"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/COMETS-GAN" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nlp">
-              <img src="assets/img/projects/wic.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Word-in-Context</h4>
-                <a href="assets/img/projects/wic.png" title="Word-in-Context" data-gallery="portfolio-gallery-app"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/nlp-hw1-word_in_context" title="More Details"
-                  class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nlp">
-              <img src="assets/img/projects/absa.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Aspect-Based Sentiment Analysis</h4>
-                <a href="assets/img/projects/absa.png" title="Aspect-Based Sentiment Analysis"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/nlp-hw2-aspect_based_sentiment_analysis" title="More Details"
-                  class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-nlp">
-              <img src="assets/img/projects/wsd.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Word Sense Disambiguation</h4>
-                <a href="assets/img/projects/wsd.png" title="Word Sense Disambiguation"
-                  data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/nlp-hw3-word_sense_disambiguation" title="More Details"
-                  class="details-link"><i class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-            <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-blockchain">
-              <img src="assets/img/projects/etreeum.png" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>eTreeum</h4>
-                <a href="assets/img/projects/etreeum.png" title="eTreeum" data-gallery="portfolio-gallery-app"
-                  class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-                <a href="https://github.com/giuseppemasi99/eTreeum" title="More Details" class="details-link"><i
-                    class="bi bi-link-45deg"></i></a>
-              </div>
-            </div><!-- End Portfolio Item -->
-
-          </div><!-- End Portfolio Container -->
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Portfolio Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Contact</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade" data-aos-delay="100">
-
-        <div class="row">
-
-          <div class="col-6">
-            <div class="info-item d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-geo-alt flex-shrink-0" aria-hidden="true"></i>
-              <div>
-                <h3>Address</h3>
-                <p>Viale Regina Elena 295, Rome </p>
-              </div>
-            </div><!-- End Info Item -->
-          </div>
-
-          <div class="col-6">
-            <div class="info-item d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
-              <i class="bi bi-envelope flex-shrink-0"></i>
-              <div>
-                <h3>Email Me</h3>
-                <a href="mailto:masi.g@di.uniroma1.it">masi.g@di.uniroma1.it</a>
-              </div>
-            </div><!-- End Info Item -->
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-    <!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative light-background">
-    <div class="container">
-      <h3 class="sitename">Giuseppe Masi</h3>
-      <!-- <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p> -->
-      <div class="social-links d-flex justify-content-center">
-        <a href="https://www.linkedin.com/in/giuseppemasi99"><i class="bi bi-linkedin"></i></a>
-        <a href="https://github.com/giuseppemasi99"><i class="bi bi-github"></i></a>
-      </div>
-      <div class="container">
-        <!--
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Alex Smith</strong> <span>All Rights Reserved</span>
-        </div>
-        -->
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(20px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+    </script>
 </body>
-
 </html>
+
